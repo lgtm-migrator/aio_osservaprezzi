@@ -20,3 +20,6 @@ class API:
         )
         json = await r.json()
         return json["array"]
+
+    async def get_data_by_id(self, id):
+        return next(filter(lambda d: d["id"] == id, await self.get_data()))

@@ -10,13 +10,9 @@ SAMPLE = {"town": "Santa Maria Imbaro", "region": "Abruzzo", "province": "CH"}
 async def test():
     async with aiohttp.ClientSession() as session:
         api = API(loop, session, data=SAMPLE,)
-        data = await api.get_data()
-        for s in data:
-            print(s["name"])
-            print(s["id"])
-            print(s["dIns"])
-            for c in s["carburanti"]:
-                print(c)
+
+        data_by_id = await api.get_data_by_id(47715)
+        print(data_by_id)
 
 
 loop.run_until_complete(test())
