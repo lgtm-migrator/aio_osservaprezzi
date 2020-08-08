@@ -17,7 +17,8 @@ async def test():
         for fuel in data_by_id.fuels:
             print(fuel)
 
-        #print (await api.get_data())
+        # print (await api.get_data())
+
 
 loop.run_until_complete(test())
 loop.close()
