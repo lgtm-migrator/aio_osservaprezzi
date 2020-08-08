@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from aio_osservaprezzi.api import API
+from aio_osservaprezzi import API
 
 loop = asyncio.get_event_loop()
 
