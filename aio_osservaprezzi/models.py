@@ -1,7 +1,7 @@
 """Models for aio_osservaprezzi."""
 
 import attr
-from typing import Optional, Dict
+from typing import Dict
 
 
 @attr.s(auto_attribs=True, frozen=True)
