@@ -3,17 +3,17 @@
         {
             "name": "Test",
             "lat": "1",
-            "long": "2",
+            "lon": "2",
             "id": 12345,
             "bnd": "AGIP",
             "addr": "ADDR",
-            "update": "2020-02-02 12:12",
+            "dIns": "2020-02-02 12:12",
             "carburanti": [
                 {
                     "carb": "Carb1",
-                    "id": 1,
-                    "is_self": 0,
-                    "price": "1,234"
+                    "idCarb": 1,
+                    "isSelf": 0,
+                    "prezzo": "1,234"
                 }
             ]
         }
