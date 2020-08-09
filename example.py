@@ -13,7 +13,8 @@ SAMPLE = {"town": "Santa Maria Imbaro", "region": "Abruzzo", "province": "CH"}
 
 async def test():
     async with aiohttp.ClientSession() as session:
-        api = OsservaPrezzi(session=session, parameters=SAMPLE)
+
+        api = OsservaPrezzi(session=session, parameters=SAMPLE,)
 
         try:
             data_by_id = await api.get_station_by_id(47715)
