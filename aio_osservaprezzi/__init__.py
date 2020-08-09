@@ -1,3 +1,10 @@
 """Initialize the package."""
 
-from .api import API  # noqa: F401
+from .osservaprezzi import (  # noqa
+    OsservaPrezzi,
+    RegionNotFoundException,
+    StationsNotFoundException,
+    OsservaPrezziConnectionError,
+)
+
+from .models import Station, Fuel  # noqa
