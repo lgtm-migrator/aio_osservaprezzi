@@ -14,7 +14,7 @@ class Fuel:
     price: float
 
     @staticmethod
-    def from_dict(data):
+    def from_dict(data) -> "Fuel":
         """Initialize the Fuel object from a dictionary."""
         return Fuel(
             name=data["carb"],
@@ -38,7 +38,7 @@ class Station:
     update: str
 
     @staticmethod
-    def from_dict(data):
+    def from_dict(data) -> "Station":
         """Initialize the Station object from a dictionary."""
         return Station(
             name=data["name"],
