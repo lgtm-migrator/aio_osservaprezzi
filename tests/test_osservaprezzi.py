@@ -7,6 +7,7 @@ from aio_osservaprezzi import (
     StationsNotFoundException,
     OsservaPrezziConnectionError,
     OsservaPrezziException,
+    RegionNotFoundException,
 )
 
 from . import load_fixture
@@ -68,7 +69,7 @@ async def test_timeout(aresponses):
     async with aiohttp.ClientSession() as session:
         osservaprezzi = OsservaPrezzi(SAMPLE, session=session, request_timeout=1)
         with pytest.raises(OsservaPrezziConnectionError):
-            assert await osservaprezzi._request()
+            await osservaprezzi._request()
 
 
 @pytest.mark.asyncio
@@ -136,3 +137,10 @@ async def test_empty_stations_not_found(aresponses):
     async with aiohttp.ClientSession() as session:
         osservaprezzi = OsservaPrezzi(SAMPLE, session)
         assert len(await osservaprezzi.get_stations()) == 0
+
+
+@pytest.mark.asyncio
+async def test_region_not_found():
+    async with aiohttp.ClientSession() as session:
+        with pytest.raises(RegionNotFoundException):
+            OsservaPrezzi({"region": "NOT FOUND"}, session)
