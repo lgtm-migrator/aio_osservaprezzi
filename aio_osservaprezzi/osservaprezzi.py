@@ -79,7 +79,7 @@ class OsservaPrezzi:
         except Exception:
             raise StationsNotFoundException("Couldn't find specified station.")
 
-    async def close(self):
+    async def close(self) -> None:
         """Close the session."""
         if self._close_session and self._session:
             await self._session.close()
