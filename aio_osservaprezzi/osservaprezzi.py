@@ -67,10 +67,7 @@ class OsservaPrezzi:
 
     async def get_stations(self):
         data = await self._request()
-        try:
-            return [Station.from_dict(s) for s in data]
-        except Exception:
-            raise StationsNotFoundException("Couldn't find stations.")
+        return [Station.from_dict(s) for s in data]
 
     async def get_station_by_id(self, id):
         stations = await self.get_stations()
